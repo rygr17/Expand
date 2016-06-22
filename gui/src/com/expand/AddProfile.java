@@ -4,22 +4,32 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
+import javax.sql.DataSource;
+
+import com.mysql.cj.jdbc.MysqlDataSource;
+
 public class AddProfile extends Profile  {
 	
 	public static void addProfile(Profile p){
 		
-		char SID=p.sid;
-		char Password=p.password;
-		String fname=p.firstName;
-		String lname=p.lastName;
-		String University= p.universtiy;
-		String Department=p.department;
+		String sid = p.sid;
+		String password = p.password;
+		String fname = p.firstName;
+		String lname = p.lastName;
+		String university = p.universtiy;
+		String department = p.department;
 		
 	
 	
 		
 		
-		try (Connection conn = DatabaseConnection.getConnection();) {
+		try {
+			MysqlDataSource datasource = new MysqlDataSource();
+			datasource.setUser("expanddb");
+			datasource.setPassword("expanddb");
+			datasource.setPort(3306);
+			datasource.setServerName("10.88.90.27:3306");;
+			Connection conn = datasource.getConnection();
             PreparedStatement statement = conn.prepareStatement(
                 "INSERT INTO PROFILES (SID, PASSWORD, FNAME, LNAME, UNIVERSITY, DEPARTMENT) VALUES(?, ?, ?, ?, ?, ?, ?)"
             );

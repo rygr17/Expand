@@ -1,9 +1,11 @@
+package com.expand;
+
 import javax.swing.*;
 
 import java.awt.*;
 import java.awt.event.*;
 
-public class newUserGUI implements ActionListener{
+public class NewUserGUI implements ActionListener{
 	
 	protected JFrame frame;
 	String sidOut;
@@ -12,7 +14,7 @@ public class newUserGUI implements ActionListener{
 	String lastNameOut;
 	
 	
-	public newUserGUI() {
+	public NewUserGUI() {
 		
 	}
 	 public void show() {
@@ -70,7 +72,7 @@ public class newUserGUI implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if (e.getActionCommand().equals("start")){
-			new newUserGUI2(sidOut, passwordOut, firstNameOut, 
+			new NewUserGUI2(sidOut, passwordOut, firstNameOut, 
 					lastNameOut).show();
 		}
 		

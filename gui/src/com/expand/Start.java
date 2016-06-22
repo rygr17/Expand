@@ -1,3 +1,5 @@
+package com.expand;
+
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
@@ -29,7 +31,7 @@ public class Start extends JPanel implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		
 		if (e.getActionCommand().equals("New User")){
-			new newUserGUI().show();
+			new NewUserGUI().show();
 		}
 		
 		if (e.getActionCommand().equals("Existing User")){

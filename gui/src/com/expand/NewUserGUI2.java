@@ -1,9 +1,11 @@
+package com.expand;
+
 import javax.swing.*;
 
 import java.awt.*;
 import java.awt.event.*;
 
-public class newUserGUI2 implements ActionListener{
+public class NewUserGUI2 implements ActionListener{
 	
 	String sid;
 	String password;
@@ -20,7 +22,7 @@ public class newUserGUI2 implements ActionListener{
 	JCheckBox baseball;
 	JCheckBox football;
 	
-	public newUserGUI2(String sid, String password, String firstName, 
+	public NewUserGUI2(String sid, String password, String firstName, 
 			String lastName){
 		this.sid = sid;
 		this.password = password;

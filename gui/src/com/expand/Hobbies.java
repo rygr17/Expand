@@ -1,4 +1,4 @@
-
+package com.expand;
 public class Hobbies {
 
 	boolean fishing;
